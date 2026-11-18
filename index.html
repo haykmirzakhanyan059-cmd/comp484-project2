@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Take care of Mochi, your virtual pet, with treats, play, exercise, and rest."
+    >
+
+    <title>Mochi | My Giga Pet</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!--
+        Load jQuery before our JavaScript because script.js uses it.
+        Both scripts use defer, so they run after the HTML is parsed,
+        in the order listed here.
+    -->
+    <script
+        src="https://code.jquery.com/jquery-2.2.1.min.js"
+        defer
+    ></script>
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="page-header">
+        <p class="eyebrow">YOUR LITTLE COMPANION</p>
+        <h1>My Giga Pet</h1>
+        <p>A little care makes a happy pet.</p>
+    </header>
+
+    <main class="pet-card">
+        <section class="pet-profile" aria-labelledby="pet-name">
+            <!-- Replace images/pet.jpg with your chosen pet image. -->
+            <img
+                class="pet-image"
+                src="images/pet.jpg"
+                alt="Mochi, my virtual pet"
+            >
+
+            <h2 id="pet-name">
+                Meet <span class="name">Mochi</span>
+            </h2>
+
+            <!--
+                role="status" lets assistive technology announce new
+                messages without moving the user's keyboard focus.
+            -->
+            <p class="pet-message" role="status">
+                Hi! I am ready to spend the day with you.
+            </p>
+        </section>
+
+        <section class="dashboard" aria-labelledby="dashboard-heading">
+            <h2 id="dashboard-heading">How I’m doing</h2>
+
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-label">Weight</span>
+                    <p><strong class="weight">20</strong> lb</p>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-label">Happiness</span>
+                    <p><strong class="happiness">50</strong> / 100</p>
+                </div>
+
+                <!-- Energy is the extra property connected to Sleep. -->
+                <div class="stat">
+                    <span class="stat-label">Energy</span>
+                    <p><strong class="energy">50</strong> / 100</p>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="treat-button" type="button">
+                    🍪 Treat
+                </button>
+
+                <button class="play-button" type="button">
+                    🎾 Play
+                </button>
+
+                <button class="exercise-button" type="button">
+                    🐾 Exercise
+                </button>
+
+                <button class="sleep-button" type="button">
+                    🌙 Sleep
+                </button>
+            </div>
+
+            <p class="care-tip">
+                Play and exercise use energy. Sleep helps Mochi recharge.
+            </p>
+        </section>
+
+        <section class="history-section" aria-labelledby="history-heading">
+            <h2 id="history-heading">Our day together</h2>
+
+            <label class="history-option">
+                <input id="keep-history" type="checkbox" checked>
+                Keep activity history
+            </label>
+
+            <p class="history-help">
+                Newest activities appear first. Turning this off stops
+                new entries; existing entries stay here.
+            </p>
+
+            <!-- JavaScript inserts activity entries inside this list. -->
+            <ul class="activity-history"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Made with care, JavaScript, and jQuery.</p>
+    </footer>
+</body>
+</html>
